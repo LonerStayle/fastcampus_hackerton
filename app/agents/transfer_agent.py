@@ -32,8 +32,10 @@ def router(state:TransferState):
     content = response.content
     if "CASE_1" in content:
         return "case_1"
-    else:
+    elif "CASE_2" in content:
         return "case_2"
+    else:
+        return "case_3"  
 
 
 def case_1_transfer(state:TransferState):
@@ -68,6 +70,7 @@ graph_builder.add_conditional_edges(
     {
         "case_1": "case_1_transfer",
         "case_2": "case_2_transfer",
+        "case_3": END,
     },
 )
 graph_builder.add_edge("case_1_transfer", END)
