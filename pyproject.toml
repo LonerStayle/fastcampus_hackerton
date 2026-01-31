@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "accelerate>=1.12.0",
+    "bitsandbytes>=0.49.1",
     "dotenv>=0.9.9",
     "fastapi>=0.128.0",
     "greenlet>=3.3.1",
@@ -16,6 +18,7 @@ dependencies = [
     "langchain-postgres>=0.0.16",
     "langchain-text-splitters>=1.1.0",
     "langgraph>=1.0.7",
+    "mlx-lm>=0.29.1",
     "pgvector<0.4",
     "psycopg>=3.3.2",
     "psycopg-binary>=3.3.2",
@@ -23,6 +26,8 @@ dependencies = [
     "pypdf>=6.6.2",
     "sentence-transformers>=5.2.2",
     "sqlalchemy>=2.0.46",
+    "torch>=2.10.0",
+    "transformers>=4.57.6",
     "uvicorn>=0.40.0",
 ]
 
