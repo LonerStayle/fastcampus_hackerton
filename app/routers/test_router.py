@@ -7,7 +7,6 @@ from app.repository.TestRepository import TestRepository
 
 router = APIRouter(prefix="/test", tags=["Router Test"])
 
-
 class ChatCreate(BaseModel):
     session_id: str
     sender: str

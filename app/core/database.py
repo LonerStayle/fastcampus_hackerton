@@ -41,7 +41,7 @@ async def get_db():
             await session.close()
 
 
-async def init_vector_extension():
-    """pgvector extension 초기화"""
-    async with engine.begin() as conn:
-        await conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
+# async def init_vector_extension():
+#     """pgvector extension 초기화"""
+#     async with engine.begin() as conn:
+#         await conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))

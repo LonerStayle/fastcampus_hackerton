@@ -1,18 +1,18 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from app.routers import test, exaone
-from app.core.database import init_vector_extension
+from app.routers import ai_router, test_router
+# from app.core.database import init_vector_extension
 
 
-@asynccontextmanager
-async def lifespan(_: FastAPI):
-    await init_vector_extension()
-    yield
+# @asynccontextmanager
+# async def lifespan(_: FastAPI):
+#     await init_vector_extension()
+#     yield
 
 
-app = FastAPI(lifespan=lifespan)
-app.include_router(test.router)
-app.include_router(exaone.router)
+app = FastAPI()
+app.include_router(test_router.router)
+app.include_router(ai_router.router)
 
 
 @app.get("/")
