@@ -8,3 +8,4 @@ class MessageTransformResponse(BaseModel):
     transformed_message: str
     emotion: str       # 추가됨: 감정 (예: "행복")
     confidence: str    # 추가됨: 확신도 (예: "99.2%")
+    recommendation: str = ""  # 추가됨: 추천 문구

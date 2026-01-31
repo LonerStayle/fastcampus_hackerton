@@ -22,6 +22,7 @@ class EmotionAnalyzer:
         "LABEL_0": "공포", "LABEL_1": "놀람", "LABEL_2": "분노", "LABEL_3": "슬픔",
         "LABEL_4": "중립", "LABEL_5": "행복", "LABEL_6": "혐오"
     }
+    
 
     @classmethod
     def get_pipeline(cls):
@@ -120,6 +121,7 @@ async def transform_message(request: MessageTransformRequest):
     response = await graph.ainvoke({
         "messages": [request.message]
     })
+    recommendation = response.get("recommendation", "")
     answer = response["messages"][-1].content
 
     # 2. 추가 로직: 감정 분석 실행
@@ -130,7 +132,8 @@ async def transform_message(request: MessageTransformRequest):
         original_message=request.message,
         transformed_message=answer,
         emotion=emotion,
-        confidence=confidence
+        confidence=confidence,
+        recommendation=recommendation
     )
 
     

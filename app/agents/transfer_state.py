@@ -1,4 +1,5 @@
 from langchain.agents import AgentState 
 
 class TransferState(AgentState):
-    pass
+    temp_recommendation: str = ""
+    recommendation: str = ""
